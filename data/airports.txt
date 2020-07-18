@@ -1,33 +1,33 @@
 New York-Newark-Jersey City, NY-NJ-PA MSA | JFK, EWR, LGA, ISP, SWF, TTN, HVN, HPN
-Los Angeles-Long Beach-Anaheim, CA MSA | LAX, SNA, ONT, BUR, LGB
+Los Angeles-Long Beach-Anaheim, CA MSA | LAX, SNA, BUR, LGB
 Chicago-Naperville-Elgin, IL-IN-WI MSA | ORD, MDW, MKE, GYY, RFD
 Dallas-Fort Worth-Arlington, TX MSA | DFW, DAL
 Houston-The Woodlands-Sugar Land, TX MSA | IAH, HOU
-Washington-Arlington-Alexandria, DC-VA-MD-WV MSA
-Miami-Fort Lauderdale-Pompano Beach, FL MSA
-Philadelphia-Camden-Wilmington, PA-NJ-DE-MD MSA
-Atlanta-Sandy Springs-Alpharetta, GA MSA
-Phoenix-Mesa-Chandler, AZ MSA
-Boston-Cambridge-Newton, MA-NH MSA
-San Francisco-Oakland-Berkeley, CA MSA
-Riverside-San Bernardino-Ontario, CA MSA
-Detroit-Warren-Dearborn, MI MSA
-Seattle-Tacoma-Bellevue, WA MSA
-Minneapolis-St. Paul-Bloomington, MN-WI MSA
-San Diego-Chula Vista-Carlsbad, CA MSA
-Tampa-St. Petersburg-Clearwater, FL MSA
-Denver-Aurora-Lakewood, CO MSA
-St. Louis, MO-IL MSA
-Baltimore-Columbia-Towson, MD MSA
-Charlotte-Concord-Gastonia, NC-SC MSA
-Orlando-Kissimmee-Sanford, FL MSA
-San Antonio-New Braunfels, TX MSA
-Portland-Vancouver-Hillsboro, OR-WA MSA
-Sacramento-Roseville-Folsom, CA MSA
-Pittsburgh, PA MSA
-Las Vegas-Henderson-Paradise, NV MSA
-Austin-Round Rock-Georgetown, TX MSA
-Cincinnati, OH-KY-IN MSA
+Washington-Arlington-Alexandria, DC-VA-MD-WV MSA | DCA, IAD
+Miami-Fort Lauderdale-Pompano Beach, FL MSA | MIA, FLL, PBI
+Philadelphia-Camden-Wilmington, PA-NJ-DE-MD MSA | PHL, ACY
+Atlanta-Sandy Springs-Alpharetta, GA MSA | ATL
+Phoenix-Mesa-Chandler, AZ MSA | PHX, AZA, IWA
+Boston-Cambridge-Newton, MA-NH MSA | BOS, PVD, MHT
+San Francisco-Oakland-Berkeley, CA MSA | SFO, SJC, OAK, STS
+Riverside-San Bernardino-Ontario, CA MSA | ONT, PSP, SBD
+Detroit-Warren-Dearborn, MI MSA | DTW
+Seattle-Tacoma-Bellevue, WA MSA | SEA, PAE
+Minneapolis-St. Paul-Bloomington, MN-WI MSA | MSP
+San Diego-Chula Vista-Carlsbad, CA MSA | SAN
+Tampa-St. Petersburg-Clearwater, FL MSA | TPA, PIE
+Denver-Aurora-Lakewood, CO MSA | DEN
+St. Louis, MO-IL MSA | STL
+Baltimore-Columbia-Towson, MD MSA | BWI
+Charlotte-Concord-Gastonia, NC-SC MSA | CLT
+Orlando-Kissimmee-Sanford, FL MSA | MCO, SFB
+San Antonio-New Braunfels, TX MSA | SAT
+Portland-Vancouver-Hillsboro, OR-WA MSA | PDX
+Sacramento-Roseville-Folsom, CA MSA | SMF
+Pittsburgh, PA MSA | PIT, LBE
+Las Vegas-Henderson-Paradise, NV MSA | LAS
+Austin-Round Rock-Georgetown, TX MSA | AUS
+Cincinnati, OH-KY-IN MSA | CVG
 Kansas City, MO-KS MSA
 Columbus, OH MSA
 Indianapolis-Carmel-Anderson, IN MSA
