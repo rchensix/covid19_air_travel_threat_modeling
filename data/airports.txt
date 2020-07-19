@@ -1,3 +1,5 @@
+Source: Follow links from https://en.wikipedia.org/wiki/List_of_metropolitan_statistical_areas
+Name | List of airport identifiers (comma separated)
 New York-Newark-Jersey City, NY-NJ-PA MSA | JFK, EWR, LGA, ISP, SWF, TTN, HVN, HPN
 Los Angeles-Long Beach-Anaheim, CA MSA | LAX, SNA, BUR, LGB
 Chicago-Naperville-Elgin, IL-IN-WI MSA | ORD, MDW, GYY, RFD
