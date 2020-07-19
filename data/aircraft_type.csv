@@ -1,0 +1,69 @@
+Code,Description,Estimated Max Passenger Count
+339,Airbus Industrie A330-900,300
+359,Airbus Industrie A350-900,300
+482,De Havilland DHC8-400 Dash-8,90
+483,De Havilland DHC8-100 Dash-8,37
+484,De Havilland DHC8-300 Dash 8,50
+491,De Havilland DHC8-200Q Dash-8,37
+530,Bombardier CRJ550,50
+570,De Havilland DHC7 Dash-7,48
+608,Boeing 717-200,134
+612,Boeing 737-700/700LR/Max 7,126
+614,Boeing 737-800,189
+615,Boeing 737-5/600LR,132
+616,Boeing 737-500,132
+617,Boeing 737-400,188
+618,Boeing 737-300LR,149
+619,Boeing 737-300,149
+620,Boeing 737-100/200,124
+621,Boeing 737-200C,119
+622,Boeing 757-200,200
+623,Boeing 757-300,200
+624,Boeing 767-400/ER,245
+625,Boeing 767-200/ER/EM,216
+626,Boeing 767-300/300ER,300
+627,Boeing 777-200ER/200LR/233LR,317
+628,Canadair RJ-100/RJ-100ER,50
+629,Canadair RJ-200ER /RJ-440,50
+631,Canadair RJ-700,78
+633,Boeing 737-600,132
+634,Boeing 737-900,189
+637,Boeing 777-300/300ER/333ER,396
+638,Canadair CRJ 900,90
+644,Airbus Industrie A-318,132
+657,Bombardier CRJ 705,75
+673,Embraer ERJ-175,88
+674,Embraer-135,37
+675,Embraer-145,50
+676,Embraer-140,44
+677,Embraer-Emb-170,100
+678,Embraer 190,98
+687,Airbus Industrie A330-300,440
+694,Airbus Industrie A320-100/200,170
+696,Airbus Industrie A330-200,253
+697,Airbus Industrie A340,370
+698,Airbus Industrie A319,160
+699,Airbus Industrie A321,240
+710,Boeing 727-100,106
+711,Boeing 727-100C/QC,106
+714,Sukhoi Superjet 100,98
+715,Boeing 727-200/231A,189
+719,Airbus Industrie A319-200n,160
+720,Bombardier C Series Cs100,108
+721,Airbus Industrie A321-200n,200
+722,Airbus Industrie A320-200n,150
+723,A200-100 BD-500-1A10,135
+724,A220-300 BD-500-1A11,135
+737,Boeing 737 Max 7,153
+824,Airbus A330-900neo,460
+836,Airbus 350-1000,410
+837,Boeing 787-10 Dreamliner,336
+838,Boeing B737 Max 800,178
+839,Boeing B737 Max 900,193
+871,Airbus Industrie A340-300,290
+872,Airbus Industrie A340-500,310
+873,Airbus Industrie A340-200,250
+874,Airbus Industrie A340-600,370
+887,B787-800 Dreamliner,296
+888,Boeing 737-900ER,215
+889,B787-900 Dreamliner,296
