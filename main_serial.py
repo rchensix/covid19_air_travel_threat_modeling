@@ -41,9 +41,6 @@ def serial_implementation():
         '06-19',
         '07-19',
         '08-19',
-        '09-19',
-        '10-19',
-        '11-19',
     ]
     num_days_per_month = {
         '12-19': 31,

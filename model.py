@@ -7,6 +7,8 @@ from typing import Dict, Tuple
 
 import numpy as np
 
+import utils
+
 class SEIRTwoStepModel:
     def __init__(self, seed: int, t_incubation: float=2, t_infectious: float=14):
         """Initialize two step SEIR model with parameters
@@ -20,10 +22,19 @@ class SEIRTwoStepModel:
         self.t_incubation = t_incubation
         self.t_infectious = t_infectious
         self._load_data()
-        self.population = _init_population()
+        self.population = self._init_population()
         
     def _load_data(self):
         """Load data from pre-defined directories"""
+        # Load city information
+
+        # Load airplane information
+        # Load airport information
+        # Load flight information (throw out any flights that depart/arrive in a city not in the
+        #     list of cities, or using a plane not in the list of airplanes)
+
+    def _init_population(self):
+        """Initialize S, E, I, R populations for all metro areas"""
         pass
     
     def step_airplane(self, beta: float, data: str, flight_load_factor: float):
