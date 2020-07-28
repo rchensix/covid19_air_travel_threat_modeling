@@ -22,6 +22,9 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(aircraft_capacity[838], 178)
         # Check number of aircrafts in database
         self.assertEqual(len(aircraft_capacity.keys()), 68)
+        # Make sure all capacities are greater than 0
+        for _, v in aircraft_capacity.items():
+            self.assertGreater(v, 0)
     
     def test_parse_airports(self):
         airports = utils.parse_airports()
@@ -30,7 +33,10 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(airports['SFO'], 'San Francisco-Oakland-Berkeley, CA MSA')
         self.assertEqual(airports['OAK'], airports['SFO'])
         # Check total number of airports
-        self.assertEqual(len(airports.keys()), 85)
+        self.assertEqual(len(airports.keys()), 84)
+        # All aircraft codes should be three letters
+        for k in airports.keys():
+            self.assertEqual(len(k), 3)
 
     def test_parse_flights(self):
         flights = utils.parse_flight_data()
@@ -40,6 +46,15 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(flight_las_sjc[0], 'LAS')
         self.assertEqual(flight_las_sjc[1], 'SJC')
         self.assertEqual(flight_las_sjc[2], 612)
+        # Check that all airport codes are three letters
+        # Check all dates are formatted as 'mm-yy' (i.e. length 5)
+        # Check all aircraft type IDs are greater than 0
+        for k, v in flights.items():
+            if k != 'test': self.assertEqual(len(k), 5)
+            for flight in v:
+                self.assertEqual(len(flight[0]), 3)
+                self.assertEqual(len(flight[1]), 3)
+                self.assertGreater(flight[2], 0)
 
 if __name__ == '__main__':
     unittest.main()

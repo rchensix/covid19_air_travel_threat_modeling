@@ -44,7 +44,7 @@ def parse_aircraft_capacity() -> Dict[int, int]:
 def parse_airports() -> Dict[str, str]:
     """Parse airport list for metro name and set of airports in each metro area"""
     data_path = 'data/airports.txt'
-    raw_data = file_parser(data_path, 0, str, 1, str, '|', rows_to_skip=1)
+    raw_data = file_parser(data_path, 0, str, 1, str, delimiter='|', rows_to_skip=2)
     # Convert to d[airport_code] = metro_name
     airports = dict()
     for metro, airport_list in raw_data.items():
