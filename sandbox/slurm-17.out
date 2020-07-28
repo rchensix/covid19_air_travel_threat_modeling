@@ -1,0 +1,19 @@
+Wed Jul 22 16:03:45 PDT 2020
+[1595459026.751844] [compute-10-13:11519:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+[1595459026.751839] [compute-10-13:11520:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+Error in system call pthread_mutex_destroy: Device or resource busy
+    ../../src/mpi/init/init_thread_cs.c:60
+Abort(1091215) on node 6 (rank 6 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(904)...............: 
+MPIDI_OFI_mpi_init_hook(1471): OFI get address vector map failed
+Error in system call pthread_mutex_destroy: Device or resource busy
+    ../../src/mpi/init/init_thread_cs.c:60
+Abort(1091215) on node 7 (rank 7 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(904)...............: 
+MPIDI_OFI_mpi_init_hook(1471): OFI get address vector map failed
+[1595459026.751973] [compute-10-13:11521:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+[1595459026.751993] [compute-10-13:11522:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+[1595459026.751998] [compute-10-13:11523:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+Wed Jul 22 16:03:46 PDT 2020
