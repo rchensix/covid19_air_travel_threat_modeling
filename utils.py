@@ -2,6 +2,7 @@
 # July 27, 2020
 # This file contains utility functions for parsing CSV and TXT files
 
+import json
 import os
 from typing import Any, Dict, List, Tuple
 
@@ -87,3 +88,18 @@ def parse_flight_data() -> Dict[str, List[Tuple[str, str, int]]]:
                     raise Exception('Bad line: {}'.format(line))
                 flight_data[month_year].append((split_line[4], split_line[8], int(split_line[11])))
     return flight_data
+
+def write_json(data: Dict, out_path: str):
+    """Writes dict as serialized json
+    Args:
+        data: Dict containing data to serialize
+        out_path: path to json file
+    """
+    with open(out_path, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def main():
+    pass
+
+if __name__ == '__main__':
+    main()

@@ -56,5 +56,15 @@ class TestUtils(unittest.TestCase):
                 self.assertEqual(len(flight[1]), 3)
                 self.assertGreater(flight[2], 0)
 
+    def test_json(self):
+        flight_data = utils.parse_flight_data()
+        airports = utils.parse_airports()
+        metropolitan_areas = utils.parse_metropolitan_areas()
+        aircraft_capacity = utils.parse_aircraft_capacity()
+        utils.write_json(flight_data, 'data/flights.json')
+        utils.write_json(airports, 'data/airports.json')
+        utils.write_json(metropolitan_areas, 'data/metropolitan_areas.json')
+        utils.write_json(aircraft_capacity, 'data/aircrafts.json')
+
 if __name__ == '__main__':
     unittest.main()

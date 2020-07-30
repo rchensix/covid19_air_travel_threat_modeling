@@ -32,6 +32,7 @@ def serial_implementation():
     t_infectious = 14
     seir = model.SEIRTwoStepModel(seed, t_incubation, t_infectious)
     months_to_simulate = [
+        '11-19',
         '12-19', 
         '01-20', 
         '02-19',
@@ -43,6 +44,7 @@ def serial_implementation():
         '08-19',
     ]
     num_days_per_month = {
+        '11-19': 30,
         '12-19': 31,
         '01-20': 31,
         # Use 2019 data for remaining months in 2020
