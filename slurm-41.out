@@ -1,0 +1,16 @@
+Mon Aug  3 17:56:22 PDT 2020
+compute-10-13
+[I 17:56:25.091 NotebookApp] Serving notebooks from local directory: /home/kaellis/covid19_air_travel_threat_modeling
+[I 17:56:25.091 NotebookApp] The Jupyter Notebook is running at:
+[I 17:56:25.091 NotebookApp] http://localhost:8888/?token=90ca49eb62e7c5951c4b288e25616baa25312a0a19abf1b5
+[I 17:56:25.091 NotebookApp]  or http://127.0.0.1:8888/?token=90ca49eb62e7c5951c4b288e25616baa25312a0a19abf1b5
+[I 17:56:25.092 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 17:56:25.180 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/kaellis/.local/share/jupyter/runtime/nbserver-24856-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=90ca49eb62e7c5951c4b288e25616baa25312a0a19abf1b5
+     or http://127.0.0.1:8888/?token=90ca49eb62e7c5951c4b288e25616baa25312a0a19abf1b5
+slurmstepd: error: *** JOB 41 ON compute-10-13 CANCELLED AT 2020-08-03T18:05:48 ***
+[C 18:05:48.604 NotebookApp] received signal 15, stopping
