@@ -29,8 +29,8 @@ class TestUtils(unittest.TestCase):
     def test_parse_airports(self):
         airports = utils.parse_airports()
         # Check some particular airports
-        self.assertEqual(airports['SJC'], 'San Jose-Sunnyvale-Santa Clara, CA MSA')
-        self.assertEqual(airports['SFO'], 'San Francisco-Oakland-Berkeley, CA MSA')
+        self.assertEqual(airports['SJC'], 'San Jose-Sunnyvale-Santa Clara CA MSA')
+        self.assertEqual(airports['SFO'], 'San Francisco-Oakland-Berkeley CA MSA')
         self.assertEqual(airports['OAK'], airports['SFO'])
         # Check total number of airports
         self.assertEqual(len(airports.keys()), 84)
