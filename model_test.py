@@ -54,7 +54,7 @@ class TestSEIRModel(unittest.TestCase):
         print(seir.population['San Jose-Sunnyvale-Santa Clara CA MSA'])
         print(seir.population['New York-Newark-Jersey City NY-NJ-PA MSA'])
 
-    def test_stepping_long(self):
+    def test_20_day_log(self):
         init_conditions = {
             'San Francisco-Oakland-Berkeley CA MSA': (4731802, 0, 10, 0),
             'San Jose-Sunnyvale-Santa Clara CA MSA': (1990658, 0, 10, 0),
@@ -70,6 +70,8 @@ class TestSEIRModel(unittest.TestCase):
             seir.step_metro(0.05)
         print(seir.population['San Jose-Sunnyvale-Santa Clara CA MSA'][-1])
         print(seir.population['New York-Newark-Jersey City NY-NJ-PA MSA'][-1])
+        log_path = 'data/test_20_day_log.txt'
+        seir.write_to_log_file(log_path)
 
 if __name__ == '__main__':
     unittest.main()

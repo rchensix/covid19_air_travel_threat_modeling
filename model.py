@@ -4,6 +4,7 @@
 # https://doi.org/10.1111/j.1541-0420.2006.00609.x
 
 import json
+import os
 from typing import Dict, Tuple, Union
 
 import numpy as np
@@ -210,10 +211,26 @@ class SEIRTwoStepModel:
         r1 = np.max(n - s1 - e1 - i1, 0)
         return (s1, e1, i1, r1)
         
-    def statistics(self) -> Dict[str, Tuple[float, float, float, float]]:
+    def statistics(self) -> Dict[str, Tuple[str, int, float, float, float, float]]:
         """Return current simulation statistics
         Returns:
-          Dict[str, Tuple[float, float, float, float]] where key is metro area name and tuple
-          contains S, E, I, R population values in that order.
+          Dict[str, Tuple[str, int, float, float, float, float]] where key is metro area name and tuple
+          contains mmyy, day, S, E, I, R population values in that order.
         """
-        pass
+        return self.population
+
+    def write_to_log_file(self, filepath: str):
+        """Writes population results to text file"""
+        directory, _ = os.path.split(filepath)
+        assert os.path.isdir(directory), '{} not a valid directory'.format(directory)
+        with open(filepath, 'w') as f:
+            f.write('Each row contains mmyy, dd, s (susceptible), e (exposed), i (infected), and r (removed) population for a particular metro area\n')
+            for metro in self.population.keys():
+                f.write('{}\n'.format(metro))
+                for population_hist in self.population[metro]:
+                    for i in range(6):
+                        if i != 5:
+                            f.write('{}, '.format(population_hist[i]))
+                        else:
+                            f.write('{}\n'.format(population_hist[i]))
+                        
