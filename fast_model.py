@@ -10,12 +10,12 @@ import multiprocessing
 import os
 from typing import Dict, List, Tuple, Union
 
-import numba
+# import numba
 import numpy as np
 
 import utils
 
-@numba.jit(nopython=True)
+# @numba.jit(nopython=True)
 def _step_seir(s: float, e: float, i: float, r: float, beta: float, t_incubation: float, 
                t_infectious: float) -> Tuple[float, float, float, float]:
     """Independent method to step SEIR variables for parallelization purposes"""
@@ -59,6 +59,7 @@ def _step_flight(flight_cache: Dict) -> Tuple:
     num_pax = int(aircrafts[ac_type] * flight_load_factor)
     orig_metro = airports[origin]
     _, _, s0, e0, i0, r0 = population[orig_metro][-1]
+    # print('s0:', s0, 'e0:', e0, 'i0:', i0, 'r0:', r0)
     pvals = np.array([s0, e0, i0, r0]) / (s0 + e0 + i0 + r0)
     s0, e0, i0, r0 = np.random.multinomial(num_pax, pvals, size=1)[0]
     # "Remove" people from population origin (record negative population change)
