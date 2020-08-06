@@ -10,5 +10,5 @@ date
 module purge
 module load intel/psxe-2020
 
-mpiexec -n 48 python -m mpi4py.bench helloworld
+srun -N 3 mpirun -n 48 python -m mpi4py.bench helloworld
 date
