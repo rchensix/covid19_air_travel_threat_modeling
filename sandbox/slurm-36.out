@@ -1,0 +1,32 @@
+Sun Aug  2 22:58:29 PDT 2020
+[1596434311.154803] [compute-10-12:19731:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+[1596434311.154825] [compute-10-12:19728:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+[1596434311.154813] [compute-10-12:19729:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+[1596434311.154840] [compute-10-12:19730:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+Error in system call pthread_mutex_destroy: Device or resource busy
+    ../../src/mpi/init/init_thread_cs.c:60
+Error in system call pthread_mutex_destroy: Device or resource busy
+    ../../src/mpi/init/init_thread_cs.c:60
+Abort(1091215) on node 6 (rank 6 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(904)...............: 
+MPIDI_OFI_mpi_init_hook(1471): OFI get address vector map failed
+[1596434311.154847] [compute-10-12:19732:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+Abort(1091215) on node 3 (rank 3 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(904)...............: 
+MPIDI_OFI_mpi_init_hook(1471): OFI get address vector map failed
+Error in system call pthread_mutex_destroy: Device or resource busy
+    ../../src/mpi/init/init_thread_cs.c:60
+Abort(1091215) on node 9 (rank 9 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(904)...............: 
+MPIDI_OFI_mpi_init_hook(1471): OFI get address vector map failed
+Error in system call pthread_mutex_destroy: Device or resource busy
+    ../../src/mpi/init/init_thread_cs.c:60
+Abort(1091215) on node 15 (rank 15 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(904)...............: 
+MPIDI_OFI_mpi_init_hook(1471): OFI get address vector map failed
+[1596434311.154925] [compute-10-12:19727:0]         select.c:434  UCX  ERROR no active messages transport to <no debug data>: posix/memory - Destination is unreachable, sysv/memory - Destination is unreachable, self/memory - Destination is unreachable, sockcm/sockaddr - no am bcopy, rdmacm/sockaddr - no am bcopy, cma/memory - no am bcopy, knem/memory - no am bcopy
+Sun Aug  2 22:58:31 PDT 2020
