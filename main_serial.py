@@ -79,7 +79,7 @@ def main():
     parser.add_argument('--seed', type=int, help='random seed')
     parser.add_argument('--log_path', type=str, help='path to output log')
     args = parser.parse_args()
-    serial_implementation(args.num_days, args.mode, args.num_procs)
+    serial_implementation(args.num_days, args.mode, args.num_procs, args.seed, args.log_path)
 
 if __name__ == '__main__':
     main()
