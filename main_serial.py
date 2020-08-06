@@ -4,6 +4,7 @@
 # It contains a serial implementation
 
 import argparse
+import os
 import sys
 from typing import Dict, Tuple, Union
 
@@ -18,10 +19,11 @@ def visualize_data(data_path: str):
     pass
 
 def serial_implementation(num_days: int, mode: Union[str, None]=None, 
-                          num_procs: Union[int, None]=None):
-    seed = 0
+                          num_procs: Union[int, None]=None,
+                          seed: int=0,
+                          log_path: Union[str, None]=None):
     t_incubation = 2
-    t_infectious = 14
+    t_infectious = 28
     init_conditions = {
         'San Francisco-Oakland-Berkeley CA MSA': (4731802, 0, 10, 0),
         'San Jose-Sunnyvale-Santa Clara CA MSA': (1990658, 0, 10, 0),
@@ -60,10 +62,13 @@ def serial_implementation(num_days: int, mode: Union[str, None]=None,
     data_path = 'out/serial_data.txt'
     num_days_to_simulate = num_days  # Ends in August at some point
     for day in range(num_days_to_simulate):
-        sys.stdout.write('Simulating day {}'.format(day + 1))
+        sys.stdout.write('Simulating day {}\n'.format(day + 1))
         seir.step_airplane(beta_airplane, flight_load_factor_by_month[seir.mmyy])
         seir.step_metro(beta_metro_by_month[seir.mmyy])
-    seir.write_to_log_file('sandbox/test_{}_day_log.txt'.format(num_days_to_simulate))
+    if log_path is None:
+        seir.write_to_log_file('sandbox/test_{}_day_log.txt'.format(num_days_to_simulate))
+    else:
+        seir.write_to_log_file(log_path)
     visualize_data(data_path)
 
 def main():
@@ -71,6 +76,8 @@ def main():
     parser.add_argument('--mode', type=str, help='run program under which mode')
     parser.add_argument('--num_days', type=int, help='number of days to simulate')
     parser.add_argument('--num_procs', type=int, help='number of processors to use (if mode is not "slow")')
+    parser.add_argument('--seed', type=int, help='random seed')
+    parser.add_argument('--log_path', type=str, help='path to output log')
     args = parser.parse_args()
     serial_implementation(args.num_days, args.mode, args.num_procs)
 

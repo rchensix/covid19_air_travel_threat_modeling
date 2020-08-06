@@ -10,5 +10,8 @@ date
 module purge
 module load intel/psxe-2020
 cd ~/covid19_air_travel_threat_modeling
-python3 ~/covid19_air_travel_threat_modeling/main_serial.py
+for i in {30..99}
+do
+  python -m main_serial --mode fast --num_procs 16 --num_days 240 --seed $i --log_path sandbox/days240_seed$i.txt
+done
 date

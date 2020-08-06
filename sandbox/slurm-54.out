@@ -1,0 +1,124 @@
+Wed Aug  5 22:38:19 PDT 2020
+Simulating day 1Simulating day 2Simulating day 3Simulating day 4Simulating day 5Simulating day 6Simulating day 7Simulating day 8Simulating day 9Simulating day 10Simulating day 11Simulating day 12Simulating day 13Simulating day 14Simulating day 15Simulating day 16multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 121, in worker
+    result = (True, func(*args, **kwds))
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 63, in _step_flight
+    s0, e0, i0, r0 = np.random.multinomial(num_pax, pvals, size=1)[0]
+  File "mtrand.pyx", line 3866, in numpy.random.mtrand.RandomState.multinomial
+  File "common.pyx", line 323, in numpy.random.common.check_array_constraint
+ValueError: pvals < 0, pvals > 1 or pvals contains NaNs
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 85, in <module>
+    main()
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 82, in main
+    serial_implementation(args.num_days, args.mode, args.num_procs)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 66, in serial_implementation
+    seir.step_airplane(beta_airplane, flight_load_factor_by_month[seir.mmyy])
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 191, in step_airplane
+    population_deltas = p.map(_step_flight, flight_caches)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 268, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 657, in get
+    raise self._value
+ValueError: pvals < 0, pvals > 1 or pvals contains NaNs
+Simulating day 1Simulating day 2Simulating day 3Simulating day 4Simulating day 5Simulating day 6Simulating day 7Simulating day 8Simulating day 9Simulating day 10Simulating day 11Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 85, in <module>
+    main()
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 82, in main
+    serial_implementation(args.num_days, args.mode, args.num_procs)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 67, in serial_implementation
+    seir.step_metro(beta_metro_by_month[seir.mmyy])
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 232, in step_metro
+    s1, e1, i1, r1 = self._step_seir(s0, e0, i0, r0, beta, self.t_incubation, self.t_infectious)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 277, in _step_seir
+    c = np.random.binomial(e, pc)
+  File "mtrand.pyx", line 3100, in numpy.random.mtrand.RandomState.binomial
+  File "common.pyx", line 351, in numpy.random.common.check_constraint
+ValueError: n < 0
+Simulating day 1Simulating day 2Simulating day 3Simulating day 4Simulating day 5Simulating day 6Simulating day 7Simulating day 8Simulating day 9Simulating day 10Simulating day 11Simulating day 12Simulating day 13Simulating day 14Simulating day 15Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 85, in <module>
+    main()
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 82, in main
+    serial_implementation(args.num_days, args.mode, args.num_procs)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 67, in serial_implementation
+    seir.step_metro(beta_metro_by_month[seir.mmyy])
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 232, in step_metro
+    s1, e1, i1, r1 = self._step_seir(s0, e0, i0, r0, beta, self.t_incubation, self.t_infectious)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 276, in _step_seir
+    b = np.random.binomial(n, p)
+  File "mtrand.pyx", line 3099, in numpy.random.mtrand.RandomState.binomial
+  File "common.pyx", line 359, in numpy.random.common.check_constraint
+ValueError: p < 0, p > 1 or p is NaN
+Simulating day 1Simulating day 2Simulating day 3Simulating day 4Simulating day 5Simulating day 6Simulating day 7Simulating day 8Simulating day 9Simulating day 10Simulating day 11Simulating day 12Simulating day 13Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 85, in <module>
+    main()
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 82, in main
+    serial_implementation(args.num_days, args.mode, args.num_procs)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 67, in serial_implementation
+    seir.step_metro(beta_metro_by_month[seir.mmyy])
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 232, in step_metro
+    s1, e1, i1, r1 = self._step_seir(s0, e0, i0, r0, beta, self.t_incubation, self.t_infectious)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 276, in _step_seir
+    b = np.random.binomial(n, p)
+  File "mtrand.pyx", line 3099, in numpy.random.mtrand.RandomState.binomial
+  File "common.pyx", line 359, in numpy.random.common.check_constraint
+ValueError: p < 0, p > 1 or p is NaN
+Simulating day 1Simulating day 2Simulating day 3Simulating day 4Simulating day 5Simulating day 6Simulating day 7Simulating day 8Simulating day 9Simulating day 10Simulating day 11Simulating day 12Simulating day 13Simulating day 14Simulating day 15Simulating day 16multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 121, in worker
+    result = (True, func(*args, **kwds))
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 63, in _step_flight
+    s0, e0, i0, r0 = np.random.multinomial(num_pax, pvals, size=1)[0]
+  File "mtrand.pyx", line 3866, in numpy.random.mtrand.RandomState.multinomial
+  File "common.pyx", line 323, in numpy.random.common.check_array_constraint
+ValueError: pvals < 0, pvals > 1 or pvals contains NaNs
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 85, in <module>
+    main()
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 82, in main
+    serial_implementation(args.num_days, args.mode, args.num_procs)
+  File "/home/rchensix/covid19_air_travel_threat_modeling/main_serial.py", line 66, in serial_implementation
+    seir.step_airplane(beta_airplane, flight_load_factor_by_month[seir.mmyy])
+  File "/home/rchensix/covid19_air_travel_threat_modeling/fast_model.py", line 191, in step_airplane
+    population_deltas = p.map(_step_flight, flight_caches)
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 268, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/opt/ohpc/pub/compiler/intel/intelpython3/lib/python3.7/multiprocessing/pool.py", line 657, in get
+    raise self._value
+ValueError: pvals < 0, pvals > 1 or pvals contains NaNs
+Simulating day 1Simulating day 2Simulating day 3Simulating day 4Simulating day 5Simulating day 6Simulating day 7Simulating day 8Simulating day 9Simulating day 10Simulating day 11Simulating day 12Simulating day 13Simulating day 14Simulating day 15Simulating day 16Simulating day 17Simulating day 18Simulating day 19Simulating day 20slurmstepd: error: *** JOB 54 ON compute-10-12 CANCELLED AT 2020-08-05T22:42:01 ***
