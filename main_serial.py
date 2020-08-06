@@ -3,9 +3,11 @@
 # This is the main function for the COVID-19 air travel model
 # It contains a serial implementation
 
+import argparse
 import sys
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Union
 
+import fast_model
 import model
     
 def visualize_data(data_path: str):
@@ -15,7 +17,8 @@ def visualize_data(data_path: str):
     """
     pass
 
-def serial_implementation():
+def serial_implementation(num_days: int, mode: Union[str, None]=None, 
+                          num_procs: Union[int, None]=None):
     seed = 0
     t_incubation = 2
     t_infectious = 14
@@ -23,8 +26,14 @@ def serial_implementation():
         'San Francisco-Oakland-Berkeley CA MSA': (4731802, 0, 10, 0),
         'San Jose-Sunnyvale-Santa Clara CA MSA': (1990658, 0, 10, 0),
     }
-    seir = model.SEIRTwoStepModel(seed, t_incubation=t_incubation, t_infectious=t_infectious, 
-                                  start_mmyy='01-20', start_day=1, init_conditions=init_conditions)
+    if mode == 'fast':
+        if num_procs is None: num_procs = 1
+        seir = fast_model.SEIRTwoStepModel(seed, t_incubation=t_incubation, t_infectious=t_infectious, 
+                                           start_mmyy='01-20', start_day=1, init_conditions=init_conditions,
+                                           num_procs=num_procs)
+    else:
+        seir = model.SEIRTwoStepModel(seed, t_incubation=t_incubation, t_infectious=t_infectious, 
+                                      start_mmyy='01-20', start_day=1, init_conditions=init_conditions)
     beta_airplane = 0.2  # Let's assume this is high bc airplane is tight quarters
     beta_metro_by_month = {
         '12-19': 0.1,
@@ -49,16 +58,21 @@ def serial_implementation():
         '08-19': 0.7,
     }
     data_path = 'out/serial_data.txt'
-    num_days_to_simulate = 240  # Ends in August at some point
+    num_days_to_simulate = num_days  # Ends in August at some point
     for day in range(num_days_to_simulate):
         sys.stdout.write('Simulating day {}'.format(day + 1))
         seir.step_airplane(beta_airplane, flight_load_factor_by_month[seir.mmyy])
         seir.step_metro(beta_metro_by_month[seir.mmyy])
-    seir.write_to_log_file('data/test_240_day_log.txt')
+    seir.write_to_log_file('sandbox/test_{}_day_log.txt'.format(num_days_to_simulate))
     visualize_data(data_path)
 
 def main():
-    serial_implementation()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--mode', type=str, help='run program under which mode')
+    parser.add_argument('--num_days', type=int, help='number of days to simulate')
+    parser.add_argument('--num_procs', type=int, help='number of processors to use (if mode is not "slow")')
+    args = parser.parse_args()
+    serial_implementation(args.num_days, args.mode, args.num_procs)
 
 if __name__ == '__main__':
     main()
