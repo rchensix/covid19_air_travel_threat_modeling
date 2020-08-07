@@ -8,22 +8,30 @@ import collections
 import json
 import multiprocessing
 import os
+import sys
 from typing import Dict, List, Tuple, Union
 
-# import numba
+import numba
 import numpy as np
 
 import utils
 
-# @numba.jit(nopython=True)
+@numba.jit(nopython=True)
 def _step_seir(s: float, e: float, i: float, r: float, beta: float, t_incubation: float, 
                t_infectious: float) -> Tuple[float, float, float, float]:
     """Independent method to step SEIR variables for parallelization purposes"""
     # Calculate probabilities (Eq. 6 in source)
     n = s + e + i + r
     p = 1 - np.exp(-beta/n*i)
+    eps = 1e-6
+    if p < eps: p = eps
+    if p > 1 - eps: p = 1 - eps
     pc = 1 - np.exp(-1/t_incubation)
+    if pc < eps: pc = eps
+    if pc > 1 - eps: pc = 1 - eps
     pr = 1 - np.exp(-1/t_infectious)
+    if pr < eps: pr = eps
+    if pr > 1 - eps: pr = 1 - eps
     # Calculate b, c, d (Eq. 5 in source)
     b = np.random.binomial(n, p)
     c = np.random.binomial(e, pc)
@@ -44,7 +52,7 @@ def _step_flight(flight_cache: Dict) -> Tuple:
     flight = flight_cache['flight']
     airports = flight_cache['airports']
     aircrafts = flight_cache['aircrafts']
-    population = flight_cache['population']
+    orig_population = flight_cache['orig_population']
     flight_load_factor = flight_cache['flight_load_factor']
     beta = flight_cache['beta']
     t_incubation = flight_cache['t_incubation']
@@ -58,7 +66,7 @@ def _step_flight(flight_cache: Dict) -> Tuple:
     # For every flight, calculate S, E, I, R population aboard airplane based on flight origin
     num_pax = int(aircrafts[ac_type] * flight_load_factor)
     orig_metro = airports[origin]
-    _, _, s0, e0, i0, r0 = population[orig_metro][-1]
+    _, _, s0, e0, i0, r0 = orig_population
     # print('s0:', s0, 'e0:', e0, 'i0:', i0, 'r0:', r0)
     pvals = np.array([s0, e0, i0, r0]) / (s0 + e0 + i0 + r0)
     s0, e0, i0, r0 = np.random.multinomial(num_pax, pvals, size=1)[0]
@@ -182,12 +190,12 @@ class SEIRTwoStepModel:
         flight_caches = [{'flight': flights[i], 
                           'airports': self.airports, 
                           'aircrafts': self.aircrafts, 
-                          'population': self.population,
+                          'orig_population': self.population[self.airports[flights[i][0]]][-1],
                           'flight_load_factor': flight_load_factor,
                           'beta': beta,
                           't_incubation': self.t_incubation,
                           't_infectious': self.t_infectious,
-                          } for i in range(len(flights))]
+                          } for i in range(len(flights)) if (flights[i][0] in self.airports.keys())]
         with multiprocessing.Pool(self.num_procs) as p:
             population_deltas = p.map(_step_flight, flight_caches)
         # Perform reduction to get local population change data
@@ -195,7 +203,11 @@ class SEIRTwoStepModel:
         for metro, delta in population_change.items():
             mmyy, dd, s0, e0, i0, r0 = self.population[metro][-1]
             ds, de, di, dr = delta
-            new_data = (mmyy, dd, s0 + ds, e0 + de, i0 + di, r0 + dr)
+            s1 = max(s0 + ds, 0)
+            e1 = max(e0 + de, 0)
+            i1 = max(i0 + di, 0)
+            r1 = max(r0 + dr, 0)
+            new_data = (mmyy, dd, s1, e1, i1, r1)
             self.population[metro].append(new_data)
         
     def _calculate_local_population_change(self, population_deltas: List) -> Dict[str, np.ndarray]:
@@ -230,7 +242,7 @@ class SEIRTwoStepModel:
         self._step_date()
         for metro in self.population.keys():
             mmyy, dd, s0, e0, i0, r0 = self.population[metro][-1]
-            s1, e1, i1, r1 = self._step_seir(s0, e0, i0, r0, beta, self.t_incubation, self.t_infectious)
+            s1, e1, i1, r1 = _step_seir(s0, e0, i0, r0, beta, self.t_incubation, self.t_infectious)
             new_data = (self.mmyy, self.day, s1, e1, i1, r1)
             self.population[metro].append(new_data)
 
