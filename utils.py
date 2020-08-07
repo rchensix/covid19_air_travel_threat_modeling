@@ -98,6 +98,9 @@ def write_json(data: Dict, out_path: str):
     with open(out_path, 'w') as f:
         json.dump(data, f, indent=2)
 
+def parse_simulation_log(filepath: str) -> Dict[str, List[Tuple[str, int, float, float, float, float]]]:
+    pass
+
 def main():
     pass
 
