@@ -99,7 +99,27 @@ def write_json(data: Dict, out_path: str):
         json.dump(data, f, indent=2)
 
 def parse_simulation_log(filepath: str) -> Dict[str, List[Tuple[str, int, float, float, float, float]]]:
-    pass
+    assert os.path.isfile(filepath), '{} not a valid file'.format(filepath)
+    with open(filepath) as f:
+        line_count = 0
+        current_metro = None
+        sim_data = dict()
+        for line in f:
+            # Skip first line
+            if line_count == 0: 
+                line_count += 1
+                continue
+            # Start parsing for this city
+            if 'MSA' in line:
+                current_metro = line.rstrip()
+                sim_data[current_metro] = list()
+                continue
+            if current_metro is not None:
+                split_line = line.split(',')
+                datapoint = (split_line[0], int(split_line[1]), float(split_line[2]),
+                             float(split_line[3]), float(split_line[4]), float(split_line[5]))
+                sim_data[current_metro].append(datapoint)
+    return sim_data
 
 def main():
     pass

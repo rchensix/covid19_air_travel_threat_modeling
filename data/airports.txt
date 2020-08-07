@@ -35,7 +35,7 @@ Columbus OH MSA|CMH
 Indianapolis-Carmel-Anderson IN MSA|IND
 Cleveland-Elyria OH MSA|CLE
 San Jose-Sunnyvale-Santa Clara CA MSA|SJC
-Nashville-Davidson–Murfreesboro–Franklin TN MSA|BNA
+Nashville-Davidson-Murfreesboro-Franklin TN MSA|BNA
 Virginia Beach-Norfolk-Newport News VA-NC MSA|PHF,ORF
 Providence-Warwick RI-MA MSA|PVD
 Milwaukee-Waukesha WI MSA|MKE
