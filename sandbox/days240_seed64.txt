@@ -16869,7 +16869,7 @@ San Jose-Sunnyvale-Santa Clara CA MSA
 08-19, 27, 1740790, 27541, 88775, 36681
 08-19, 27, 1740345, 27536, 88703, 36676
 08-19, 28, 1726948, 30210, 96246, 39856
-Nashville-Davidsonâ€“Murfreesboroâ€“Franklin TN MSA
+Nashville-Davidson-Murfreesboro-Franklin TN MSA
 01-20, 1, 1934317, 0, 0, 0
 01-20, 1, 1935494, 0, 0, 0
 01-20, 2, 1935492, 2, 0, 0

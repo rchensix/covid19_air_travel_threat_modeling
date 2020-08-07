@@ -8,7 +8,7 @@ Rank,Name,2019 Population Estimate,2020 Census,Percent Change,Encompassing Combi
 6,Washington-Arlington-Alexandria DC-VA-MD-WV MSA,6280487,5649540,+11.17%,Washington-Baltimore-Arlington DC-MD-VA-WV-PA CSA
 7,Miami-Fort Lauderdale-Pompano Beach FL MSA,6166488,5564635,+10.82%,Miami-Port St. Lucie-Fort Lauderdale FL CSA
 8,Philadelphia-Camden-Wilmington PA-NJ-DE-MD MSA,6102434,5965343,+2.30%,Philadelphia-Reading-Camden PA-NJ-DE-MD CSA
-9,Atlanta-Sandy Springs-Alpharetta GA MSA,6020364,5286728,+13.88%,Atlanta–Athens-Clarke County–Sandy Springs GA-AL CSA
+9,Atlanta-Sandy Springs-Alpharetta GA MSA,6020364,5286728,+13.88%,Atlanta-Athens-Clarke County-Sandy Springs GA-AL CSA
 10,Phoenix-Mesa-Chandler AZ MSA,4948203,4192887,+18.01%,Phoenix-Mesa AZ CSA
 11,Boston-Cambridge-Newton MA-NH MSA,4873019,4552402,+7.04%,Boston-Worcester-Providence MA-RI-NH-CT CSA
 12,San Francisco-Oakland-Berkeley CA MSA,4731803,4335391,+9.14%,San Jose-San Francisco-Oakland CA CSA
@@ -35,7 +35,7 @@ Rank,Name,2019 Population Estimate,2020 Census,Percent Change,Encompassing Combi
 33,Indianapolis-Carmel-Anderson IN MSA,2074537,1887877,+9.89%,Indianapolis-Carmel-Muncie IN CSA
 34,Cleveland-Elyria OH MSA,2048449,2077240,−1.39%,Cleveland-Akron-Canton OH CSA
 35,San Jose-Sunnyvale-Santa Clara CA MSA,1990660,1836911,+8.37%,San Jose-San Francisco-Oakland CA CSA
-36,Nashville-Davidson–Murfreesboro–Franklin TN MSA,1934317,1646200,+17.50%,Nashville-Davidson–Murfreesboro TN CSA
+36,Nashville-Davidson-Murfreesboro-Franklin TN MSA,1934317,1646200,+17.50%,Nashville-Davidson-Murfreesboro TN CSA
 37,Virginia Beach-Norfolk-Newport News VA-NC MSA,1768901,1713954,+3.21%,Virginia Beach-Norfolk VA-NC CSA
 38,Providence-Warwick RI-MA MSA,1624578,1600852,+1.48%,Boston-Worcester-Providence MA-RI-NH-CT CSA
 39,Milwaukee-Waukesha WI MSA,1575179,1555908,+1.24%,Milwaukee-Racine-Waukesha WI CSA
@@ -45,7 +45,7 @@ Rank,Name,2019 Population Estimate,2020 Census,Percent Change,Encompassing Combi
 43,Memphis TN-MS-AR MSA,1346045,1316100,+2.28%,Memphis-Forrest City TN-MS-AR CSA
 44,Richmond VA MSA,1291900,1186501,+8.88%,
 45,New Orleans-Metairie LA MSA,1270530,1189866,+6.78%,New Orleans-Metairie-Hammond LA-MS CSA
-46,Louisville/Jefferson County KY-IN MSA,1265108,1202718,+5.19%,Louisville/Jefferson County–Elizabethtown–Bardstown KY-IN CSA
+46,Louisville/Jefferson County KY-IN MSA,1265108,1202718,+5.19%,Louisville/Jefferson County-Elizabethtown-Bardstown KY-IN CSA
 47,Salt Lake City UT MSA,1232696,1087873,+13.31%,Salt Lake City-Provo-Orem UT CSA
 48,Hartford-East Hartford-Middletown CT MSA,1204877,1212381,−0.62%,Hartford-East Hartford CT CSA
 49,Buffalo-Cheektowaga NY MSA,1127983,1135509,−0.66%,Buffalo-Cheektowaga-Olean NY CSA
