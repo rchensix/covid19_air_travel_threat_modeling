@@ -1,0 +1,64 @@
+Sun Aug  9 15:09:02 PDT 2020
+Simulating day 1
+Simulating day 2
+Simulating day 3
+Simulating day 4
+Simulating day 5
+Simulating day 6
+Simulating day 7
+Simulating day 8
+Simulating day 9
+Simulating day 10
+Simulating day 11
+Simulating day 12
+Simulating day 13
+Simulating day 14
+Simulating day 15
+Simulating day 16
+Simulating day 17
+Simulating day 18
+Simulating day 19
+Simulating day 20
+Simulating day 21
+Simulating day 22
+Simulating day 23
+Simulating day 24
+Simulating day 25
+Simulating day 26
+Simulating day 27
+Simulating day 28
+Simulating day 29
+Simulating day 30
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 15:09:03  Samples:  6796
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 41.116    CPU time: 10.050
+/   _/                      v3.1.3
+
+Program: main.py --sim_param_file benchmarking/30_day_benchmark_fast_np2.json
+
+41.116 <module>  main.py:5
+├─ 37.426 main  main.py:52
+│  └─ 37.361 implementation  main.py:14
+│     ├─ 35.457 step_airplane  fast_model.py:171
+│     │  ├─ 29.091 map  multiprocessing/pool.py:263
+│     │  │     [16 frames hidden]  multiprocessing, threading
+│     │  │        29.078 wait  threading.py:264
+│     │  ├─ 3.162 _calculate_local_population_change  fast_model.py:215
+│     │  ├─ 1.649 __exit__  multiprocessing/pool.py:622
+│     │  │     [10 frames hidden]  multiprocessing
+│     │  └─ 1.277 <listcomp>  fast_model.py:190
+│     ├─ 1.028 step_metro  fast_model.py:239
+│     │  └─ 1.027 _compile_for_args  numba/dispatcher.py:326
+│     │        [2710 frames hidden]  numba, contextlib, abc, llvmlite, re,...
+│     └─ 0.513 __init__  fast_model.py:83
+│        └─ 0.513 _load_data  fast_model.py:139
+│           └─ 0.512 load  json/__init__.py:274
+│                 [8 frames hidden]  json, codecs
+└─ 3.678 <module>  fast_model.py:7
+   └─ 3.633 <module>  numba/__init__.py:3
+         [1533 frames hidden]  numba, numpy, pathlib, textwrap, re, ...
+
+To view this report with different options, run:
+    pyinstrument --load-prev 2020-08-09T15-09-03 [options]
+
+Sun Aug  9 15:09:46 PDT 2020

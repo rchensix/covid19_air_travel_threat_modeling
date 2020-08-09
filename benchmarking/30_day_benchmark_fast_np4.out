@@ -1,0 +1,67 @@
+Sun Aug  9 15:11:52 PDT 2020
+Simulating day 1
+Simulating day 2
+Simulating day 3
+Simulating day 4
+Simulating day 5
+Simulating day 6
+Simulating day 7
+Simulating day 8
+Simulating day 9
+Simulating day 10
+Simulating day 11
+Simulating day 12
+Simulating day 13
+Simulating day 14
+Simulating day 15
+Simulating day 16
+Simulating day 17
+Simulating day 18
+Simulating day 19
+Simulating day 20
+Simulating day 21
+Simulating day 22
+Simulating day 23
+Simulating day 24
+Simulating day 25
+Simulating day 26
+Simulating day 27
+Simulating day 28
+Simulating day 29
+Simulating day 30
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 15:11:52  Samples:  6485
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 27.811    CPU time: 9.851
+/   _/                      v3.1.3
+
+Program: main.py --sim_param_file benchmarking/30_day_benchmark_fast_np4.json
+
+27.811 <module>  main.py:5
+├─ 24.176 main  main.py:52
+│  └─ 24.119 implementation  main.py:14
+│     ├─ 22.233 step_airplane  fast_model.py:171
+│     │  ├─ 15.003 map  multiprocessing/pool.py:263
+│     │  │     [11 frames hidden]  multiprocessing, threading
+│     │  │        14.996 wait  threading.py:264
+│     │  ├─ 2.901 _calculate_local_population_change  fast_model.py:215
+│     │  ├─ 2.271 __exit__  multiprocessing/pool.py:622
+│     │  │     [10 frames hidden]  multiprocessing
+│     │  ├─ 1.643 <listcomp>  fast_model.py:190
+│     │  └─ 0.401 Pool  multiprocessing/context.py:114
+│     │        [52 frames hidden]  multiprocessing, weakref, threading, ...
+│     ├─ 1.008 step_metro  fast_model.py:239
+│     │  └─ 1.007 _compile_for_args  numba/dispatcher.py:326
+│     │        [2729 frames hidden]  numba, enum, contextlib, llvmlite, ab...
+│     ├─ 0.501 __init__  fast_model.py:83
+│     │  └─ 0.501 _load_data  fast_model.py:139
+│     │     └─ 0.500 load  json/__init__.py:274
+│     │           [8 frames hidden]  json, codecs
+│     └─ 0.318 [self]  
+└─ 3.623 <module>  fast_model.py:7
+   └─ 3.578 <module>  numba/__init__.py:3
+         [1421 frames hidden]  numba, numpy, pathlib, textwrap, re, ...
+
+To view this report with different options, run:
+    pyinstrument --load-prev 2020-08-09T15-11-52 [options]
+
+Sun Aug  9 15:12:22 PDT 2020

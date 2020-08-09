@@ -1,0 +1,61 @@
+Sun Aug  9 15:04:17 PDT 2020
+Simulating day 1
+Simulating day 2
+Simulating day 3
+Simulating day 4
+Simulating day 5
+Simulating day 6
+Simulating day 7
+Simulating day 8
+Simulating day 9
+Simulating day 10
+Simulating day 11
+Simulating day 12
+Simulating day 13
+Simulating day 14
+Simulating day 15
+Simulating day 16
+Simulating day 17
+Simulating day 18
+Simulating day 19
+Simulating day 20
+Simulating day 21
+Simulating day 22
+Simulating day 23
+Simulating day 24
+Simulating day 25
+Simulating day 26
+Simulating day 27
+Simulating day 28
+Simulating day 29
+Simulating day 30
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 15:04:17  Samples:  87617
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 91.182    CPU time: 88.284
+/   _/                      v3.1.3
+
+Program: main.py --sim_param_file benchmarking/30_day_benchmark_slow.json
+
+91.182 <module>  main.py:5
+├─ 87.474 main  main.py:52
+│  └─ 87.427 implementation  main.py:14
+│     └─ 86.687 step_airplane  model.py:101
+│        ├─ 50.983 _step_seir  model.py:186
+│        │  ├─ 26.836 [self]  
+│        │  └─ 24.148 amax  <__array_function__ internals>:2
+│        │     ├─ 20.079 amax  numpy/core/fromnumeric.py:2504
+│        │     │     [8 frames hidden]  numpy
+│        │     └─ 3.839 [self]  
+│        ├─ 26.622 [self]  
+│        └─ 9.082 all  <__array_function__ internals>:2
+│           ├─ 7.726 all  numpy/core/fromnumeric.py:2277
+│           │     [6 frames hidden]  numpy
+│           └─ 1.223 [self]  
+└─ 3.698 <module>  fast_model.py:7
+   └─ 3.654 <module>  numba/__init__.py:3
+         [1559 frames hidden]  numba, numpy, pathlib, abc, collectio...
+
+To view this report with different options, run:
+    pyinstrument --load-prev 2020-08-09T15-04-17 [options]
+
+Sun Aug  9 15:05:56 PDT 2020
