@@ -65,6 +65,10 @@ class TestUtils(unittest.TestCase):
         utils.write_json(airports, 'data/airports.json')
         utils.write_json(metropolitan_areas, 'data/metropolitan_areas.json')
         utils.write_json(aircraft_capacity, 'data/aircrafts.json')
+    
+    def test_parse_sim_params(self):
+        sim_params = utils.parse_sim_params('data/sim_param_test.json')
+        print(sim_params)
 
 if __name__ == '__main__':
     unittest.main()

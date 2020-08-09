@@ -121,6 +121,10 @@ def parse_simulation_log(filepath: str) -> Dict[str, List[Tuple[str, int, float,
                 sim_data[current_metro].append(datapoint)
     return sim_data
 
+def parse_sim_params(sim_param_json: str) -> Dict:
+    with open(sim_param_json, 'r') as f:
+        return json.load(f)
+
 def main():
     pass
 
