@@ -60,9 +60,9 @@ def _step_flight(flight_cache: Dict) -> Tuple:
     origin = flight[0]
     dest = flight[1]
     ac_type = flight[2]
-    if origin not in airports.keys(): return None
-    if dest not in airports.keys(): return None
-    if ac_type not in aircrafts.keys(): return None
+    # if origin not in airports.keys(): return None
+    # if dest not in airports.keys(): return None
+    # if ac_type not in aircrafts.keys(): return None
     # For every flight, calculate S, E, I, R population aboard airplane based on flight origin
     num_pax = int(aircrafts[ac_type] * flight_load_factor)
     orig_metro = airports[origin]
@@ -195,7 +195,9 @@ class SEIRTwoStepModel:
                           'beta': beta,
                           't_incubation': self.t_incubation,
                           't_infectious': self.t_infectious,
-                          } for i in range(len(flights)) if (flights[i][0] in self.airports.keys())]
+                          } for i in range(len(flights)) if (flights[i][0] in self.airports.keys() and \
+                              flights[i][1] in self.airports.keys() and flights[i][2] in self.aircrafts.keys()) \
+                        ]
         with multiprocessing.Pool(self.num_procs) as p:
             population_deltas = p.map(_step_flight, flight_caches)
         # Perform reduction to get local population change data
