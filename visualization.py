@@ -224,7 +224,7 @@ def us_covid_animation():
     x = np.array([metro_coords[metro][0] for metro in metro_coords.keys()])
     y = np.array([metro_coords[metro][1] for metro in metro_coords.keys()])
     s = np.ones_like(x)
-    smax = 2000
+    smax = 4000
     scatter = ax.scatter(x, y, s=s, c='#800080', alpha=0.5)
     sim_path = 'sims/240_day_baseline_log.txt'
     data = utils.parse_simulation_log(sim_path)
@@ -232,10 +232,11 @@ def us_covid_animation():
     frames = list()
     num_half_days = len(data['Tucson AZ MSA'])
     for half_day in range(num_half_days):
+        if half_day % 2 == 0: continue  # only plot half the data
         point_sizes = list()
         for metro in data.keys():
             snapshot = data[metro][half_day]
-            pt_size = int((snapshot[3] + snapshot[4] + snapshot[5]) / pmax * smax) + 1
+            pt_size = int(np.log(snapshot[3] + snapshot[4] + snapshot[5]) / np.log(pmax)) * smax + 1
             point_sizes.append(pt_size)
         frames.append((half_day // 2, np.array(point_sizes)))
     print(len(frames))
