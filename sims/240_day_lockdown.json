@@ -36,7 +36,7 @@
         "San Francisco-Oakland-Berkeley CA MSA": [4731802, 0, 10, 0],
         "San Jose-Sunnyvale-Santa Clara CA MSA": [1990658, 0, 10, 0]
     },
-    "log_out_path": "sims/240_day_lockdown.json",
+    "log_out_path": "sims/240_day_lockdown_log.json",
     "mode": "fast",
     "num_days_to_simulate": 240,
     "num_procs": 16,
