@@ -239,11 +239,10 @@ def us_covid_animation():
             pt_size = int(np.log(snapshot[3] + snapshot[4] + snapshot[5]) / np.log(pmax)) * smax + 1
             point_sizes.append(pt_size)
         frames.append((half_day // 2, np.array(point_sizes)))
-    print(len(frames))
     ani = animation.FuncAnimation(fig, _animation_func, frames=frames, fargs=(scatter, ax),
                                   interval=100, blit=False)
     # plt.show()
-    ani.save('sims/240_day_baseline_cases.mp4', fps=30)
+    ani.save('sims/240_day_baseline_cases.gif', fps=30)
 
 def main():
     # generate_running_average_plot()
