@@ -239,7 +239,6 @@ def us_covid_animation():
             pt_size = int(np.log(snapshot[3] + snapshot[4] + snapshot[5] + 1) / np.log(pmax) * smax) + 1
             point_sizes.append(pt_size)
         frames.append((half_day // 2, np.array(point_sizes)))
-        print(frames)
     ani = animation.FuncAnimation(fig, _animation_func, frames=frames, fargs=(scatter, ax),
                                   interval=100, blit=False)
     # plt.show()
