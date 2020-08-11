@@ -7,6 +7,7 @@ from typing import Dict, List, Tuple
 
 import matplotlib.animation as animation
 import matplotlib.image as mpimg
+import matplotlib.lines as lines
 import matplotlib.pyplot as plt
 import multiprocessing
 import numpy as np
@@ -244,12 +245,36 @@ def us_covid_animation():
     # plt.show()
     ani.save('sims/240_day_baseline_cases.gif', fps=10)
 
+def flight_map():
+    flights = utils.parse_flight_data()['12-19']
+    airports = utils.parse_airports()
+    aircrafts = utils.parse_aircraft_capacity()
+    background_img_path = 'data/united_states_map_with_metro_areas.jpg'
+    background_img = mpimg.imread(background_img_path)
+    metro_coords = _metro_coords()
+    # DO NOT CHANGE FIGURE SIZE!
+    fig = plt.figure(figsize=(16, 9))
+    ax = fig.add_subplot(111)
+    ax.imshow(background_img)
+    # This is probably a pretty shitty way to do this but... YOLO!
+    for flight in flights:
+        origin = flight[0]
+        dest = flight[1]
+        ac = flight[2]
+        if origin not in airports.keys() or dest not in airports.keys() \
+            or ac not in aircrafts.keys(): continue
+        x = np.array([metro_coords[airports[origin]][0], metro_coords[airports[dest]][0]])
+        y = np.array([metro_coords[airports[origin]][1], metro_coords[airports[dest]][1]])
+        ax.plot(x, y, color='black', marker='o', markersize=10) 
+    plt.savefig('data/flight_route_map_12-19.png')   
+
 def main():
     # generate_running_average_plot()
     # bay_area_plots()
     # bay_area_scenarios()
     # beta_scenarios()
-    us_covid_animation()
+    # us_covid_animation()
+    flight_map()
 
 if __name__ == '__main__':
     main()
