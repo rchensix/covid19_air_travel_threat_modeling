@@ -265,7 +265,7 @@ def flight_map():
             or ac not in aircrafts.keys(): continue
         x = np.array([metro_coords[airports[origin]][0], metro_coords[airports[dest]][0]])
         y = np.array([metro_coords[airports[origin]][1], metro_coords[airports[dest]][1]])
-        ax.plot(x, y, color='black', marker='o', markersize=10) 
+        ax.plot(x, y, color='black', marker='o', alpha=0.5, markersize=10) 
     plt.savefig('data/flight_route_map_12-19.png')   
 
 def main():
